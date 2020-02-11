@@ -1,0 +1,6 @@
+        Nd4j.setDefaultDataTypes(DataType.DOUBLE,DataType.DOUBLE);
+
+        MultiLayerNetwork model= KerasModelImport.importKerasSequentialModelAndWeights(model_weight_struc_path);
+        
+        INDArray tt1=Nd4j.createFromNpyFile(new File("test_matrix.npy"));
+        System.out.println(model.output(tt1,false));
